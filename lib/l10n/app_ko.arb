@@ -1,0 +1,21 @@
+{
+  "appTitle": "DeFi Staking Toolbox Pro",
+  "dashboard": "대시보드",
+  "tools": "도구",
+  "settings": "설정",
+  "disclaimerTitle": "면책 조항",
+  "disclaimerText": "이 앱은 교육 목적으로만 사용되며 투자 조언이 아닙니다. 계산 및 AI에 오류가 있을 수 있습니다. 독립적으로 확인하십시오.",
+  "agree": "동의",
+  "theme": "테마",
+  "darkMode": "다크 모드",
+  "language": "언어",
+  "dashboardScreen": "대시보드 화면",
+  "toolsScreen": "도구 화면",
+  "english": "영어",
+  "chinese": "중국어",
+  "japanese": "일본어",
+  "korean": "한국어",
+  "spanish": "스페인어",
+  "chineseSimplified": "중국어(간체)",
+  "chineseTraditional": "중국어(번체)"
+}
