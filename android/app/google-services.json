@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1084362425681",
+    "project_id": "defi-staking-toolbox-pro",
+    "storage_bucket": "defi-staking-toolbox-pro.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084362425681:android:cf12d1aadf285344b83f70",
+        "android_client_info": {
+          "package_name": "com.example.dstp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn4ZszTmgp2I3Gs-QDHFDjvnztmQJ_5nA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084362425681:android:c7fcc155a89af553b83f70",
+        "android_client_info": {
+          "package_name": "com.smartit.dstp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBn4ZszTmgp2I3Gs-QDHFDjvnztmQJ_5nA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
