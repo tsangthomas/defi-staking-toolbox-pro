@@ -647,7 +647,3 @@ build/
 /dev/tools/lib/gen_keycodes/key_code_to_name_map_web_web_web_web_test_data_fallback.tmpl
 /dev/tools/lib/gen_keycodes/key_code_to_name_map_web_web_web_web_test_data_fallback_web.tmpl
 /dev/tools/lib/gen_keycodes/key_code_to_name_map_web_web_web_web_test_data_web.tmpl
-
-# Firebase
-google-services.json
-GoogleService-Info.plist
