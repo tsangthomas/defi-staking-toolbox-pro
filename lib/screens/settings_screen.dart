@@ -35,19 +35,30 @@ class SettingsScreen extends StatelessWidget {
               AppLocalizations.of(context)?.language ?? 'Language',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            DropdownButton<Locale>(
-              value: languageProvider.appLocale,
-              onChanged: (Locale? newLocale) {
-                if (newLocale != null) {
-                  languageProvider.changeLanguage(newLocale);
-                }
+            PopupMenuButton<Locale>(
+              onSelected: (Locale newLocale) {
+                languageProvider.changeLanguage(newLocale);
               },
-              items: AppLocalizations.supportedLocales.where((locale) => locale.languageCode != 'zh' || locale.countryCode != null).map((locale) {
-                return DropdownMenuItem<Locale>(
-                  value: locale,
-                  child: Text(languageProvider.getLanguageName(context, locale.toString())),
-                );
-              }).toList(),
+              itemBuilder: (BuildContext context) {
+                return AppLocalizations.supportedLocales
+                    .where((locale) =>
+                        locale.languageCode != 'zh' || locale.countryCode != null)
+                    .map((locale) {
+                  return PopupMenuItem<Locale>(
+                    value: locale,
+                    child: Text(
+                        languageProvider.getLanguageName(context, locale.toString())),
+                  );
+                }).toList();
+              },
+              child: ListTile(
+                title: Text(
+                  languageProvider.getLanguageName(
+                      context, languageProvider.appLocale.toString()),
+                ),
+                trailing: Icon(Icons.arrow_drop_down, color: Theme.of(context).hintColor),
+                contentPadding: EdgeInsets.zero,
+              ),
             ),
           ],
         ),
