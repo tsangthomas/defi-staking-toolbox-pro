@@ -20,19 +20,7 @@ class PortfolioDashboardScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(localizations.portfolioTrackerTitle),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (ctx) => const AddStakingScreen(),
-                ),
-              );
-            },
-          ),
-        ],
+        title: Text(localizations.portfolioTrackerTitle, style: const TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: portfolio.isEmpty
           ? Center(
@@ -68,6 +56,17 @@ class PortfolioDashboardScreen extends StatelessWidget {
                 ),
               ),
             ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (ctx) => const AddStakingScreen(),
+            ),
+          );
+        },
+        tooltip: localizations.addStaking,
+        child: const Icon(Icons.add),
+      ),
     );
   }
 
@@ -123,7 +122,7 @@ class PortfolioDashboardScreen extends StatelessWidget {
     }).toList();
 
     return SizedBox(
-      height: 200,
+      height: 250,
       child: Card(
         elevation: 4,
         child: Padding(
@@ -131,7 +130,7 @@ class PortfolioDashboardScreen extends StatelessWidget {
           child: Column(
             children: [
               Text(localizations.portfolioDistribution, style: Theme.of(context).textTheme.titleMedium),
-              const SizedBox(height: 8),
+              const SizedBox(height: 16),
               Expanded(
                 child: PieChart(
                   PieChartData(
@@ -257,10 +256,12 @@ class PortfolioDashboardScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    CircleAvatar(
-                      backgroundColor: _getCoinColor(item.coin).withOpacity(0.2),
-                      child: Text(item.coin[0], style: TextStyle(color: _getCoinColor(item.coin), fontWeight: FontWeight.bold)),
-                    ),
+                    (item.imageUrl != null && item.imageUrl!.isNotEmpty)
+                        ? Image.network(item.imageUrl!, width: 40, height: 40)
+                        : CircleAvatar(
+                            radius: 20,
+                            child: Text(item.coin.isNotEmpty ? item.coin[0] : ''),
+                          ),
                     const SizedBox(width: 12),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,

@@ -5,6 +5,8 @@ import 'package:dstp/providers/language_provider.dart';
 import 'package:dstp/l10n/app_localizations.dart';
 
 class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
@@ -12,7 +14,7 @@ class SettingsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)?.settings ?? 'Settings'),
+        title: Text(AppLocalizations.of(context)?.settings ?? 'Settings', style: const TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

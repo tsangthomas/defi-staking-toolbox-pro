@@ -24,13 +24,14 @@ class StakingItemAdapter extends TypeAdapter<StakingItem> {
       startDate: fields[4] as DateTime,
       stakingAddress: fields[5] as String?,
       estimatedAPY: fields[6] as double,
+      imageUrl: fields[7] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, StakingItem obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.coin)
       ..writeByte(1)
@@ -44,7 +45,9 @@ class StakingItemAdapter extends TypeAdapter<StakingItem> {
       ..writeByte(5)
       ..write(obj.stakingAddress)
       ..writeByte(6)
-      ..write(obj.estimatedAPY);
+      ..write(obj.estimatedAPY)
+      ..writeByte(7)
+      ..write(obj.imageUrl);
   }
 
   @override

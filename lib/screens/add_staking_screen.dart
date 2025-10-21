@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
+import 'package:searchfield/searchfield.dart';
+
+import 'package:dstp/data/coin_data.dart';
 import 'package:dstp/models/staking_item.dart';
 import 'package:dstp/providers/portfolio_provider.dart';
 
@@ -16,7 +19,7 @@ class AddStakingScreen extends StatefulWidget {
 
 class _AddStakingScreenState extends State<AddStakingScreen> {
   final _formKey = GlobalKey<FormState>();
-  String _selectedCoin = 'ETH';
+  final _coinController = TextEditingController();
   final _validatorController = TextEditingController();
   final _balanceController = TextEditingController();
   final _lockPeriodController = TextEditingController();
@@ -24,20 +27,32 @@ class _AddStakingScreenState extends State<AddStakingScreen> {
   final _estimatedApyController = TextEditingController();
   DateTime _startDate = DateTime.now();
 
-  final List<String> _coins = ['ETH', 'SOL', 'ADA', 'DOT'];
-
   @override
   void initState() {
     super.initState();
     if (widget.stakingItem != null) {
-      _selectedCoin = widget.stakingItem!.coin;
+      _coinController.text = widget.stakingItem!.coin;
       _validatorController.text = widget.stakingItem!.validator ?? '';
       _balanceController.text = widget.stakingItem!.balance.toString();
       _lockPeriodController.text = widget.stakingItem!.lockPeriodDays.toString();
       _stakingAddressController.text = widget.stakingItem!.stakingAddress ?? '';
       _estimatedApyController.text = widget.stakingItem!.estimatedAPY.toString();
       _startDate = widget.stakingItem!.startDate;
+    } else {
+      final initialCoin = CoinData.coins.first;
+      _coinController.text = initialCoin['name']!;
     }
+  }
+
+  @override
+  void dispose() {
+    _coinController.dispose();
+    _validatorController.dispose();
+    _balanceController.dispose();
+    _lockPeriodController.dispose();
+    _stakingAddressController.dispose();
+    _estimatedApyController.dispose();
+    super.dispose();
   }
 
   @override
@@ -52,20 +67,44 @@ class _AddStakingScreenState extends State<AddStakingScreen> {
           key: _formKey,
           child: ListView(
             children: [
-              DropdownButtonFormField<String>(
-                value: _selectedCoin,
-                items: _coins.map((String coin) {
-                  return DropdownMenuItem<String>(
-                    value: coin,
-                    child: Text(coin),
-                  );
-                }).toList(),
-                onChanged: (newValue) {
+              SearchField(
+                controller: _coinController,
+                suggestions: CoinData.coins
+                    .map((coin) => SearchFieldListItem(
+                          coin['name']!,
+                          item: coin,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Row(
+                              children: [
+                                Image.network(coin['imageUrl']!, width: 24, height: 24),
+                                const SizedBox(width: 10),
+                                Text(coin['name']!),
+                              ],
+                            ),
+                          ),
+                        ))
+                    .toList(),
+                onSuggestionTap: (SearchFieldListItem<Map<String, String>> item) {
                   setState(() {
-                    _selectedCoin = newValue!;
+                    _coinController.text = item.item!['name']!;
                   });
                 },
-                decoration: const InputDecoration(labelText: 'Coin'),
+                suggestionState: Suggestion.expand,
+                textInputAction: TextInputAction.next,
+                hint: 'Select Coin',
+                searchInputDecoration: SearchInputDecoration(
+                  labelText: 'Coin',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please select a coin';
+                  }
+                  if (!CoinData.coins.any((coin) => coin['name'] == value)) {
+                    return 'Please select a valid coin from the list';
+                  }
+                  return null;
+                },
               ),
               TextFormField(
                 controller: _validatorController,
@@ -99,7 +138,7 @@ class _AddStakingScreenState extends State<AddStakingScreen> {
                   return null;
                 },
               ),
-              if (_selectedCoin == 'ETH' || _selectedCoin == 'SOL')
+              if (_coinController.text == 'ETH' || _coinController.text == 'SOL')
                 TextFormField(
                   controller: _stakingAddressController,
                   decoration: const InputDecoration(labelText: 'Staking Address'),
@@ -146,14 +185,17 @@ class _AddStakingScreenState extends State<AddStakingScreen> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
+                    final selectedCoinName = _coinController.text;
+                    final selectedCoinData = CoinData.coins.firstWhere((coin) => coin['name'] == selectedCoinName);
                     final newItem = StakingItem(
-                      coin: _selectedCoin,
+                      coin: selectedCoinName,
                       validator: _validatorController.text,
                       balance: double.parse(_balanceController.text),
                       lockPeriodDays: int.parse(_lockPeriodController.text),
                       startDate: _startDate,
                       stakingAddress: _stakingAddressController.text,
                       estimatedAPY: double.parse(_estimatedApyController.text),
+                      imageUrl: selectedCoinData['imageUrl']!,
                     );
 
                     final provider = Provider.of<PortfolioProvider>(context, listen: false);

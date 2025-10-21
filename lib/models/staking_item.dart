@@ -25,6 +25,9 @@ class StakingItem extends HiveObject {
   @HiveField(6)
   final double estimatedAPY;
 
+  @HiveField(7)
+  final String? imageUrl;
+
   StakingItem({
     required this.coin,
     this.validator,
@@ -33,5 +36,6 @@ class StakingItem extends HiveObject {
     required this.startDate,
     this.stakingAddress,
     required this.estimatedAPY,
+    this.imageUrl,
   });
 }

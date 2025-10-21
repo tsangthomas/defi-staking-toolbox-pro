@@ -47,6 +47,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         title: Text(
           toBeginningOfSentenceCase(AppLocalizations.of(context)!.dashboard) ??
               'Dashboard',
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
       body: ValueListenableBuilder(
@@ -96,6 +97,228 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                ),
+              ),
+              const SliverToBoxAdapter(child: SizedBox(height: 20)),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 200,
+                  child: BarChart(
+                    BarChartData(
+                      barGroups: [
+                        BarChartGroupData(
+                          x: 0,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 8,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 1,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 10,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 2,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 14,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 3,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 15,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 4,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 13,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 5,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 12,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                      ],
+                      titlesData: FlTitlesData(
+                        show: true,
+                        bottomTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: true,
+                            getTitlesWidget: (double value, TitleMeta meta) {
+                              const style = TextStyle(
+                                color: Color(0xff7589a2),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                              );
+                              Widget text;
+                              switch (value.toInt()) {
+                                case 0:
+                                  text = const Text('Mn', style: style);
+                                  break;
+                                case 1:
+                                  text = const Text('Te', style: style);
+                                  break;
+                                case 2:
+                                  text = const Text('Wd', style: style);
+                                  break;
+                                case 3:
+                                  text = const Text('Tu', style: style);
+                                  break;
+                                case 4:
+                                  text = const Text('Fr', style: style);
+                                  break;
+                                case 5:
+                                  text = const Text('St', style: style);
+                                  break;
+                                default:
+                                  text = const Text('', style: style);
+                                  break;
+                              }
+                              return SideTitleWidget(
+                                meta: meta,
+                                space: 16.0,
+                                child: text,
+                              );
+                            },
+                            reservedSize: 42,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SliverToBoxAdapter(child: SizedBox(height: 20)),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 200,
+                  child: BarChart(
+                    BarChartData(
+                      barGroups: [
+                        BarChartGroupData(
+                          x: 0,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 8,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 1,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 10,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 2,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 14,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 3,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 15,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 4,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 13,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 5,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 12,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                      ],
+                      titlesData: FlTitlesData(
+                        show: true,
+                        bottomTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: true,
+                            getTitlesWidget: (double value, TitleMeta meta) {
+                              const style = TextStyle(
+                                color: Color(0xff7589a2),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                              );
+                              Widget text;
+                              switch (value.toInt()) {
+                                case 0:
+                                  text = const Text('Mn', style: style);
+                                  break;
+                                case 1:
+                                  text = const Text('Te', style: style);
+                                  break;
+                                case 2:
+                                  text = const Text('Wd', style: style);
+                                  break;
+                                case 3:
+                                  text = const Text('Tu', style: style);
+                                  break;
+                                case 4:
+                                  text = const Text('Fr', style: style);
+                                  break;
+                                case 5:
+                                  text = const Text('St', style: style);
+                                  break;
+                                default:
+                                  text = const Text('', style: style);
+                                  break;
+                              }
+                              return SideTitleWidget(
+                                meta: meta,
+                                space: 16.0,
+                                child: text,
+                              );
+                            },
+                            reservedSize: 42,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),

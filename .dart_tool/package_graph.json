@@ -20,6 +20,7 @@
         "http",
         "intl",
         "provider",
+        "searchfield",
         "shared_preferences"
       ],
       "devDependencies": [
@@ -103,6 +104,13 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "searchfield",
+      "version": "1.3.5",
+      "dependencies": [
+        "flutter"
       ]
     },
     {
