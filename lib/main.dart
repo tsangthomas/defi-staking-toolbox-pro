@@ -11,17 +11,33 @@ import 'package:dstp/models/staking_program.dart';
 import 'package:dstp/models/crypto_holding.dart';
 import 'package:dstp/models/staking_item.dart';
 import 'package:dstp/providers/portfolio_provider.dart';
+import 'package:dstp/services/encryption_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await Hive.initFlutter();
+
+  final encryptionService = EncryptionService();
+  final encryptionKey = await encryptionService.getEncryptionKey();
+
   Hive.registerAdapter(StakingProgramAdapter());
   Hive.registerAdapter(CryptoHoldingAdapter());
   Hive.registerAdapter(StakingItemAdapter());
-  await Hive.openBox<StakingProgram>('staking_programs');
-  await Hive.openBox<CryptoHolding>('crypto_holdings');
-  await Hive.openBox<StakingItem>('staking_items');
+
+  await Hive.openBox<StakingProgram>(
+    'staking_programs',
+    encryptionCipher: HiveAesCipher(encryptionKey),
+  );
+  await Hive.openBox<CryptoHolding>(
+    'crypto_holdings',
+    encryptionCipher: HiveAesCipher(encryptionKey),
+  );
+  await Hive.openBox<StakingItem>(
+    'staking_items',
+    encryptionCipher: HiveAesCipher(encryptionKey),
+  );
+
   runApp(const MyApp());
 }
 
