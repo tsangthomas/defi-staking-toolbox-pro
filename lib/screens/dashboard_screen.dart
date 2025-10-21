@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:dstp/models/staking_program.dart';
 import 'package:dstp/services/coin_service.dart';
 import 'package:dstp/services/shared_preferences_service.dart';
@@ -40,10 +41,17 @@ class _DashboardScreenState extends State<DashboardScreen> {
     });
   }
 
+=======
+import 'package:flutter/material.dart';
+import 'package:dstp/l10n/app_localizations.dart';
+
+class DashboardScreen extends StatelessWidget {
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+<<<<<<< HEAD
         title: Text(
           toBeginningOfSentenceCase(AppLocalizations.of(context)!.dashboard) ??
               'Dashboard',
@@ -294,3 +302,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
     );
   }
 }
+=======
+        title: Text(AppLocalizations.of(context)?.dashboard ?? 'Dashboard'),
+      ),
+      body: Center(
+        child: Text(AppLocalizations.of(context)?.dashboardScreen ?? 'Dashboard Screen'),
+      ),
+    );
+  }
+}
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1

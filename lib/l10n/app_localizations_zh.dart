@@ -15,9 +15,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get dashboard => '仪表盘';
 
   @override
+<<<<<<< HEAD
   String get portfolio => '投资组合';
 
   @override
+=======
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
   String get tools => '工具';
 
   @override
@@ -27,22 +30,34 @@ class AppLocalizationsZh extends AppLocalizations {
   String get disclaimerTitle => '免责声明';
 
   @override
+<<<<<<< HEAD
   String get disclaimerText =>
       'This app is for educational purposes only, not investment advice. Calculations and AI may have errors; verify independently.';
 
   @override
   String get agree => 'Agree';
+=======
+  String get disclaimerText => '本应用仅供教育目的，不构成投资建议。计算和人工智能可能存在错误；请独立核实。';
+
+  @override
+  String get agree => '同意';
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 
   @override
   String get theme => '主题';
 
   @override
+<<<<<<< HEAD
   String get darkMode => 'Dark Mode';
+=======
+  String get darkMode => '黑暗模式';
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 
   @override
   String get language => '语言';
 
   @override
+<<<<<<< HEAD
   String get dashboardScreen => 'Dashboard Screen';
 
   @override
@@ -189,6 +204,33 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get editStakingDetails => '编辑质押头寸的详细信息。';
+=======
+  String get dashboardScreen => '仪表盘屏幕';
+
+  @override
+  String get toolsScreen => '工具屏幕';
+
+  @override
+  String get english => '英语';
+
+  @override
+  String get chinese => '中文';
+
+  @override
+  String get japanese => '日语';
+
+  @override
+  String get korean => '韩语';
+
+  @override
+  String get spanish => '西班牙语';
+
+  @override
+  String get chineseSimplified => '简体中文';
+
+  @override
+  String get chineseTraditional => '繁體中文';
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -196,15 +238,22 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   AppLocalizationsZhCn() : super('zh_CN');
 
   @override
+<<<<<<< HEAD
   String get appTitle => 'DeFi 质押工具箱 Pro';
+=======
+  String get appTitle => 'DeFi Staking Toolbox Pro';
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 
   @override
   String get dashboard => '仪表盘';
 
   @override
+<<<<<<< HEAD
   String get portfolio => '投资组合';
 
   @override
+=======
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
   String get tools => '工具';
 
   @override
@@ -214,6 +263,7 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
   String get disclaimerTitle => '免责声明';
 
   @override
+<<<<<<< HEAD
   String get theme => '主题';
 
   @override
@@ -324,6 +374,48 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get editStakingDetails => '编辑质押头寸的详细信息。';
+=======
+  String get disclaimerText => '本应用仅供教育目的，不构成投资建议。计算和人工智能可能存在错误；请独立核实。';
+
+  @override
+  String get agree => '同意';
+
+  @override
+  String get theme => '主题';
+
+  @override
+  String get darkMode => '黑暗模式';
+
+  @override
+  String get language => '语言';
+
+  @override
+  String get dashboardScreen => '仪表盘屏幕';
+
+  @override
+  String get toolsScreen => '工具屏幕';
+
+  @override
+  String get english => '英语';
+
+  @override
+  String get chinese => '中文';
+
+  @override
+  String get japanese => '日语';
+
+  @override
+  String get korean => '韩语';
+
+  @override
+  String get spanish => '西班牙语';
+
+  @override
+  String get chineseSimplified => '简体中文';
+
+  @override
+  String get chineseTraditional => '繁體中文';
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -331,15 +423,22 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   AppLocalizationsZhTw() : super('zh_TW');
 
   @override
+<<<<<<< HEAD
   String get appTitle => 'DeFi 質押工具箱 Pro';
+=======
+  String get appTitle => 'DeFi Staking Toolbox Pro';
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 
   @override
   String get dashboard => '儀表板';
 
   @override
+<<<<<<< HEAD
   String get portfolio => '投資組合';
 
   @override
+=======
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
   String get tools => '工具';
 
   @override
@@ -349,6 +448,7 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
   String get disclaimerTitle => '免責聲明';
 
   @override
+<<<<<<< HEAD
   String get theme => '主題';
 
   @override
@@ -459,4 +559,46 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get editStakingDetails => '編輯質押頭寸的詳細資訊。';
+=======
+  String get disclaimerText => '本應用僅供教育目的，不構成投資建議。計算和人工智能可能存在錯誤；請獨立核實。';
+
+  @override
+  String get agree => '同意';
+
+  @override
+  String get theme => '主題';
+
+  @override
+  String get darkMode => '黑暗模式';
+
+  @override
+  String get language => '語言';
+
+  @override
+  String get dashboardScreen => '儀表板屏幕';
+
+  @override
+  String get toolsScreen => '工具屏幕';
+
+  @override
+  String get english => '英語';
+
+  @override
+  String get chinese => '中文';
+
+  @override
+  String get japanese => '日語';
+
+  @override
+  String get korean => '韓語';
+
+  @override
+  String get spanish => '西班牙語';
+
+  @override
+  String get chineseSimplified => '简体中文';
+
+  @override
+  String get chineseTraditional => '繁體中文';
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 }

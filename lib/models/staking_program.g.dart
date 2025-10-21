@@ -17,11 +17,19 @@ class StakingProgramAdapter extends TypeAdapter<StakingProgram> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return StakingProgram(
+<<<<<<< HEAD
       id: fields[0] as String,
       name: fields[1] as String,
       apy: fields[2] as double,
       coinId: fields[3] as String?,
       imageUrl: fields[4] as String?,
+=======
+      coin: fields[0] as String,
+      amount: fields[1] as double,
+      validator: fields[2] as String,
+      lockPeriod: fields[3] as int,
+      lockPeriodUnit: fields[4] as String,
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
     );
   }
 
@@ -30,6 +38,7 @@ class StakingProgramAdapter extends TypeAdapter<StakingProgram> {
     writer
       ..writeByte(5)
       ..writeByte(0)
+<<<<<<< HEAD
       ..write(obj.id)
       ..writeByte(1)
       ..write(obj.name)
@@ -39,6 +48,17 @@ class StakingProgramAdapter extends TypeAdapter<StakingProgram> {
       ..write(obj.coinId)
       ..writeByte(4)
       ..write(obj.imageUrl);
+=======
+      ..write(obj.coin)
+      ..writeByte(1)
+      ..write(obj.amount)
+      ..writeByte(2)
+      ..write(obj.validator)
+      ..writeByte(3)
+      ..write(obj.lockPeriod)
+      ..writeByte(4)
+      ..write(obj.lockPeriodUnit);
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
   }
 
   @override

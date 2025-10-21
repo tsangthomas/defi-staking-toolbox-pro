@@ -9,15 +9,22 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
+<<<<<<< HEAD
   String get appTitle => 'DeFi 스테이킹 툴박스 프로';
+=======
+  String get appTitle => 'DeFi Staking Toolbox Pro';
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 
   @override
   String get dashboard => '대시보드';
 
   @override
+<<<<<<< HEAD
   String get portfolio => '포트폴리오';
 
   @override
+=======
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
   String get tools => '도구';
 
   @override
@@ -28,21 +35,33 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get disclaimerText =>
+<<<<<<< HEAD
       'This app is for educational purposes only, not investment advice. Calculations and AI may have errors; verify independently.';
 
   @override
   String get agree => 'Agree';
+=======
+      '이 앱은 교육 목적으로만 사용되며 투자 조언이 아닙니다. 계산 및 AI에 오류가 있을 수 있습니다. 독립적으로 확인하십시오.';
+
+  @override
+  String get agree => '동의';
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 
   @override
   String get theme => '테마';
 
   @override
+<<<<<<< HEAD
   String get darkMode => 'Dark Mode';
+=======
+  String get darkMode => '다크 모드';
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 
   @override
   String get language => '언어';
 
   @override
+<<<<<<< HEAD
   String get dashboardScreen => 'Dashboard Screen';
 
   @override
@@ -190,4 +209,31 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get editStakingDetails => '스테이킹 포지션의 세부 정보를 편집하세요.';
+=======
+  String get dashboardScreen => '대시보드 화면';
+
+  @override
+  String get toolsScreen => '도구 화면';
+
+  @override
+  String get english => '영어';
+
+  @override
+  String get chinese => '중국어';
+
+  @override
+  String get japanese => '일본어';
+
+  @override
+  String get korean => '한국어';
+
+  @override
+  String get spanish => '스페인어';
+
+  @override
+  String get chineseSimplified => '중국어(간체)';
+
+  @override
+  String get chineseTraditional => '중국어(번체)';
+>>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 }
