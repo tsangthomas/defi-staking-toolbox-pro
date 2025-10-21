@@ -9,6 +9,8 @@ import 'package:dstp/screens/main_screen.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:dstp/models/staking_program.dart';
 import 'package:dstp/models/crypto_holding.dart';
+import 'package:dstp/models/staking_item.dart';
+import 'package:dstp/providers/portfolio_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,8 +18,10 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(StakingProgramAdapter());
   Hive.registerAdapter(CryptoHoldingAdapter());
+  Hive.registerAdapter(StakingItemAdapter());
   await Hive.openBox<StakingProgram>('staking_programs');
   await Hive.openBox<CryptoHolding>('crypto_holdings');
+  await Hive.openBox<StakingItem>('staking_items');
   runApp(const MyApp());
 }
 
@@ -30,6 +34,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
         ChangeNotifierProvider(create: (_) => LanguageProvider()),
+        ChangeNotifierProvider(create: (_) => PortfolioProvider()),
       ],
       child: Consumer<ThemeProvider>(
         builder: (context, themeProvider, child) {

@@ -11,9 +11,11 @@
         "fl_chart",
         "flutter",
         "flutter_localizations",
+        "flutter_slidable",
         "hive",
         "hive_flutter",
         "http",
+        "intl",
         "provider",
         "shared_preferences"
       ],
@@ -98,6 +100,22 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "intl",
+      "version": "0.20.2",
+      "dependencies": [
+        "clock",
+        "meta",
+        "path"
+      ]
+    },
+    {
+      "name": "flutter_slidable",
+      "version": "3.1.2",
+      "dependencies": [
+        "flutter"
       ]
     },
     {
@@ -721,15 +739,6 @@
       "version": "1.0.0",
       "dependencies": [
         "flutter"
-      ]
-    },
-    {
-      "name": "intl",
-      "version": "0.20.2",
-      "dependencies": [
-        "clock",
-        "meta",
-        "path"
       ]
     },
     {

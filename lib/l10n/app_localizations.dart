@@ -118,6 +118,12 @@ abstract class AppLocalizations {
   /// **'Dashboard'**
   String get dashboard;
 
+  /// No description provided for @portfolio.
+  ///
+  /// In en, this message translates to:
+  /// **'Portfolio'**
+  String get portfolio;
+
   /// No description provided for @tools.
   ///
   /// In en, this message translates to:
@@ -249,6 +255,210 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'AI Analysis'**
   String get aiAnalysis;
+
+  /// No description provided for @disclaimerContent.
+  ///
+  /// In en, this message translates to:
+  /// **'This is a beta version of the app. All features are for experimental and educational purposes only. Do not use with real assets.'**
+  String get disclaimerContent;
+
+  /// No description provided for @accept.
+  ///
+  /// In en, this message translates to:
+  /// **'Accept'**
+  String get accept;
+
+  /// No description provided for @decline.
+  ///
+  /// In en, this message translates to:
+  /// **'Decline'**
+  String get decline;
+
+  /// No description provided for @portfolioTrackerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Portfolio Tracker'**
+  String get portfolioTrackerTitle;
+
+  /// No description provided for @noStakingItems.
+  ///
+  /// In en, this message translates to:
+  /// **'No Staking Items'**
+  String get noStakingItems;
+
+  /// No description provided for @addStakingItemsToGetStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Add staking items to get started'**
+  String get addStakingItemsToGetStarted;
+
+  /// No description provided for @totalStaked.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Staked'**
+  String get totalStaked;
+
+  /// No description provided for @totalRewards.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Rewards'**
+  String get totalRewards;
+
+  /// No description provided for @avgApy.
+  ///
+  /// In en, this message translates to:
+  /// **'Average APY'**
+  String get avgApy;
+
+  /// No description provided for @portfolioDistribution.
+  ///
+  /// In en, this message translates to:
+  /// **'Portfolio Distribution'**
+  String get portfolioDistribution;
+
+  /// No description provided for @stakingPositions.
+  ///
+  /// In en, this message translates to:
+  /// **'Staking Positions'**
+  String get stakingPositions;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @staked.
+  ///
+  /// In en, this message translates to:
+  /// **'Staked'**
+  String get staked;
+
+  /// No description provided for @startDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Date'**
+  String get startDate;
+
+  /// No description provided for @apy.
+  ///
+  /// In en, this message translates to:
+  /// **'APY'**
+  String get apy;
+
+  /// No description provided for @stakingItemDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Staking item for {coin} deleted'**
+  String stakingItemDeleted(Object coin);
+
+  /// No description provided for @confirmDeletion.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Deletion'**
+  String get confirmDeletion;
+
+  /// No description provided for @areYouSureYouWantToDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete the staking item for {coin}?'**
+  String areYouSureYouWantToDelete(Object coin);
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @addStaking.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Staking'**
+  String get addStaking;
+
+  /// No description provided for @editStaking.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Staking'**
+  String get editStaking;
+
+  /// No description provided for @coin.
+  ///
+  /// In en, this message translates to:
+  /// **'Coin'**
+  String get coin;
+
+  /// No description provided for @validator.
+  ///
+  /// In en, this message translates to:
+  /// **'Validator'**
+  String get validator;
+
+  /// No description provided for @balance.
+  ///
+  /// In en, this message translates to:
+  /// **'Balance'**
+  String get balance;
+
+  /// No description provided for @lockPeriod.
+  ///
+  /// In en, this message translates to:
+  /// **'Lock Period (days)'**
+  String get lockPeriod;
+
+  /// No description provided for @stakingAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Staking Address (optional)'**
+  String get stakingAddress;
+
+  /// No description provided for @estimatedApy.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated APY (%)'**
+  String get estimatedApy;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @fieldCannotBeEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Field cannot be empty'**
+  String get fieldCannotBeEmpty;
+
+  /// No description provided for @invalidNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid number'**
+  String get invalidNumber;
+
+  /// No description provided for @invalidApy.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid APY'**
+  String get invalidApy;
+
+  /// No description provided for @addStakingDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Add the details of your new staking position.'**
+  String get addStakingDetails;
+
+  /// No description provided for @editStakingDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit the details of your staking position.'**
+  String get editStakingDetails;
 }
 
 class _AppLocalizationsDelegate
