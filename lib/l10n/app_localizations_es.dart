@@ -12,14 +12,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get appTitle => 'DeFi Staking Toolbox Pro';
 
   @override
-<<<<<<< HEAD
   String get dashboard => 'Tablero';
 
   @override
   String get portfolio => 'Portafolio';
-=======
-  String get dashboard => 'Panel';
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 
   @override
   String get tools => 'Herramientas';
@@ -32,34 +28,22 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get disclaimerText =>
-<<<<<<< HEAD
-      'This app is for educational purposes only, not investment advice. Calculations and AI may have errors; verify independently.';
-
-  @override
-  String get agree => 'Agree';
-=======
       'Esta aplicación es solo para fines educativos, no para consejos de inversión. Los cálculos y la IA pueden tener errores; verifique de forma independiente.';
 
   @override
   String get agree => 'Aceptar';
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 
   @override
   String get theme => 'Tema';
 
   @override
-<<<<<<< HEAD
-  String get darkMode => 'Dark Mode';
-=======
   String get darkMode => 'Modo oscuro';
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 
   @override
   String get language => 'Idioma';
 
   @override
-<<<<<<< HEAD
-  String get dashboardScreen => 'Dashboard Screen';
+  String get dashboardScreen => 'Pantalla del panel';
 
   @override
   String get chartsPlaceholder => 'Charts will be here';
@@ -74,28 +58,28 @@ class AppLocalizationsEs extends AppLocalizations {
   String get addStakingProgram => 'Add Staking Program';
 
   @override
-  String get toolsScreen => 'Tools Screen';
+  String get toolsScreen => 'Pantalla de herramientas';
 
   @override
-  String get english => 'English';
+  String get english => 'Inglés';
 
   @override
-  String get chinese => 'Chinese';
+  String get chinese => 'Chino';
 
   @override
-  String get japanese => 'Japanese';
+  String get japanese => 'Japonés';
 
   @override
-  String get korean => 'Korean';
+  String get korean => 'Coreano';
 
   @override
-  String get spanish => 'Spanish';
+  String get spanish => 'Español';
 
   @override
-  String get chineseSimplified => 'Chinese (Simplified)';
+  String get chineseSimplified => 'Chino (simplificado)';
 
   @override
-  String get chineseTraditional => 'Chinese (Traditional)';
+  String get chineseTraditional => 'Chino (tradicional)';
 
   @override
   String get aiAnalysis => 'AI Analysis';
@@ -209,31 +193,4 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get editStakingDetails =>
       'Edite los detalles de su posición de staking.';
-=======
-  String get dashboardScreen => 'Pantalla del panel';
-
-  @override
-  String get toolsScreen => 'Pantalla de herramientas';
-
-  @override
-  String get english => 'Inglés';
-
-  @override
-  String get chinese => 'Chino';
-
-  @override
-  String get japanese => 'Japonés';
-
-  @override
-  String get korean => 'Coreano';
-
-  @override
-  String get spanish => 'Español';
-
-  @override
-  String get chineseSimplified => 'Chino (simplificado)';
-
-  @override
-  String get chineseTraditional => 'Chino (tradicional)';
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 }

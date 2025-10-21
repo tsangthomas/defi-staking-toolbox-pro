@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "appTitle": "DeFiステーキングツールボックスプロ",
     "dashboard": "ダッシュボード",
     "tools": "ツール",
@@ -44,26 +43,17 @@
     "invalidNumber": "無効な数値です",
     "invalidApy": "無効なAPYです",
     "addStakingDetails": "新しいステーキングポジションの詳細を追加してください。",
-    "editStakingDetails": "ステーキングポジションの詳細を編集してください。"
-=======
-  "appTitle": "DeFi Staking Toolbox Pro",
-  "dashboard": "ダッシュボード",
-  "tools": "ツール",
-  "settings": "設定",
-  "disclaimerTitle": "免責事項",
-  "disclaimerText": "このアプリは教育目的のみであり、投資アドバイスではありません。計算やAIに誤りがある可能性があります。独立して確認してください。",
-  "agree": "同意する",
-  "theme": "テーマ",
-  "darkMode": "ダークモード",
-  "language": "言語",
-  "dashboardScreen": "ダッシュボード画面",
-  "toolsScreen": "ツール画面",
-  "english": "英語",
-  "chinese": "中国語",
-  "japanese": "日本語",
-  "korean": "韓国語",
-  "spanish": "スペイン語",
-  "chineseSimplified": "中国語（簡体字）",
-  "chineseTraditional": "中国語（繁体字）"
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
+    "editStakingDetails": "ステーキングポジションの詳細を編集してください。",
+    "disclaimerText": "このアプリは教育目的のみであり、投資アドバイスではありません。計算やAIに誤りがある可能性があります。独立して確認してください。",
+    "agree": "同意する",
+    "darkMode": "ダークモード",
+    "dashboardScreen": "ダッシュボード画面",
+    "toolsScreen": "ツール画面",
+    "english": "英語",
+    "chinese": "中国語",
+    "japanese": "日本語",
+    "korean": "韓国語",
+    "spanish": "スペイン語",
+    "chineseSimplified": "中国語（簡体字）",
+    "chineseTraditional": "中国語（繁体字）"
 }

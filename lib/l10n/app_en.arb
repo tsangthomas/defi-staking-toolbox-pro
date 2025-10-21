@@ -1,10 +1,7 @@
 {
   "appTitle": "DeFi Staking Toolbox Pro",
   "dashboard": "Dashboard",
-<<<<<<< HEAD
   "portfolio": "Portfolio",
-=======
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
   "tools": "Tools",
   "settings": "Settings",
   "disclaimerTitle": "Disclaimer",
@@ -14,13 +11,10 @@
   "darkMode": "Dark Mode",
   "language": "Language",
   "dashboardScreen": "Dashboard Screen",
-<<<<<<< HEAD
   "chartsPlaceholder": "Charts will be here",
   "stakingPrograms": "Staking Programs",
   "programListPlaceholder": "Staking program list will be here",
   "addStakingProgram": "Add Staking Program",
-=======
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
   "toolsScreen": "Tools Screen",
   "english": "English",
   "chinese": "Chinese",
@@ -28,7 +22,6 @@
   "korean": "Korean",
   "spanish": "Spanish",
   "chineseSimplified": "Chinese (Simplified)",
-<<<<<<< HEAD
   "chineseTraditional": "Chinese (Traditional)",
   "aiAnalysis": "AI Analysis",
   "disclaimerContent": "This is a beta version of the app. All features are for experimental and educational purposes only. Do not use with real assets.",
@@ -65,7 +58,4 @@
   "invalidApy": "Invalid APY",
   "addStakingDetails": "Add the details of your new staking position.",
   "editStakingDetails": "Edit the details of your staking position."
-=======
-  "chineseTraditional": "Chinese (Traditional)"
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 }

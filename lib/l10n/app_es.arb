@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "appTitle": "DeFi Staking Toolbox Pro",
     "dashboard": "Tablero",
     "tools": "Herramientas",
@@ -44,26 +43,17 @@
     "invalidNumber": "Número inválido",
     "invalidApy": "APY inválido",
     "addStakingDetails": "Agregue los detalles de su nueva posición de staking.",
-    "editStakingDetails": "Edite los detalles de su posición de staking."
-=======
-  "appTitle": "DeFi Staking Toolbox Pro",
-  "dashboard": "Panel",
-  "tools": "Herramientas",
-  "settings": "Configuración",
-  "disclaimerTitle": "Descargo de responsabilidad",
-  "disclaimerText": "Esta aplicación es solo para fines educativos, no para consejos de inversión. Los cálculos y la IA pueden tener errores; verifique de forma independiente.",
-  "agree": "Aceptar",
-  "theme": "Tema",
-  "darkMode": "Modo oscuro",
-  "language": "Idioma",
-  "dashboardScreen": "Pantalla del panel",
-  "toolsScreen": "Pantalla de herramientas",
-  "english": "Inglés",
-  "chinese": "Chino",
-  "japanese": "Japonés",
-  "korean": "Coreano",
-  "spanish": "Español",
-  "chineseSimplified": "Chino (simplificado)",
-  "chineseTraditional": "Chino (tradicional)"
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
+    "editStakingDetails": "Edite los detalles de su posición de staking.",
+    "disclaimerText": "Esta aplicación es solo para fines educativos, no para consejos de inversión. Los cálculos y la IA pueden tener errores; verifique de forma independiente.",
+    "agree": "Aceptar",
+    "darkMode": "Modo oscuro",
+    "dashboardScreen": "Pantalla del panel",
+    "toolsScreen": "Pantalla de herramientas",
+    "english": "Inglés",
+    "chinese": "Chino",
+    "japanese": "Japonés",
+    "korean": "Coreano",
+    "spanish": "Español",
+    "chineseSimplified": "Chino (simplificado)",
+    "chineseTraditional": "Chino (tradicional)"
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import 'package:dstp/models/staking_program.dart';
 import 'package:dstp/services/coin_service.dart';
 import 'package:dstp/services/shared_preferences_service.dart';
@@ -41,17 +40,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
     });
   }
 
-=======
-import 'package:flutter/material.dart';
-import 'package:dstp/l10n/app_localizations.dart';
-
-class DashboardScreen extends StatelessWidget {
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-<<<<<<< HEAD
         title: Text(
           toBeginningOfSentenceCase(AppLocalizations.of(context)!.dashboard) ??
               'Dashboard',
@@ -206,7 +198,118 @@ class DashboardScreen extends StatelessWidget {
                                   break;
                               }
                               return SideTitleWidget(
-                                axisSide: meta.axisSide,
+                                meta: meta,
+                                space: 16.0,
+                                child: text,
+                              );
+                            },
+                            reservedSize: 42,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              const SliverToBoxAdapter(child: SizedBox(height: 20)),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 200,
+                  child: BarChart(
+                    BarChartData(
+                      barGroups: [
+                        BarChartGroupData(
+                          x: 0,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 8,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 1,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 10,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 2,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 14,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 3,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 15,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 4,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 13,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                        BarChartGroupData(
+                          x: 5,
+                          barRods: [
+                            BarChartRodData(
+                              toY: 12,
+                              color: Colors.lightBlueAccent,
+                            ),
+                          ],
+                        ),
+                      ],
+                      titlesData: FlTitlesData(
+                        show: true,
+                        bottomTitles: AxisTitles(
+                          sideTitles: SideTitles(
+                            showTitles: true,
+                            getTitlesWidget: (double value, TitleMeta meta) {
+                              const style = TextStyle(
+                                color: Color(0xff7589a2),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                              );
+                              Widget text;
+                              switch (value.toInt()) {
+                                case 0:
+                                  text = const Text('Mn', style: style);
+                                  break;
+                                case 1:
+                                  text = const Text('Te', style: style);
+                                  break;
+                                case 2:
+                                  text = const Text('Wd', style: style);
+                                  break;
+                                case 3:
+                                  text = const Text('Tu', style: style);
+                                  break;
+                                case 4:
+                                  text = const Text('Fr', style: style);
+                                  break;
+                                case 5:
+                                  text = const Text('St', style: style);
+                                  break;
+                                default:
+                                  text = const Text('', style: style);
+                                  break;
+                              }
+                              return SideTitleWidget(
+                                meta: meta,
                                 space: 16.0,
                                 child: text,
                               );
@@ -247,7 +350,7 @@ class DashboardScreen extends StatelessWidget {
                         toBeginningOfSentenceCase(
                               AppLocalizations.of(
                                 context,
-                              )?.programListPlaceholder,
+                              )!.programListPlaceholder,
                             ) ??
                             'Staking program list will be here',
                       ),
@@ -274,7 +377,7 @@ class DashboardScreen extends StatelessWidget {
                     onPressed: null, // Disabled
                     child: Text(
                       toBeginningOfSentenceCase(
-                            AppLocalizations.of(context)?.aiAnalysis,
+                            AppLocalizations.of(context)!.aiAnalysis,
                           ) ??
                           'AI Analysis',
                     ),
@@ -292,23 +395,13 @@ class DashboardScreen extends StatelessWidget {
             builder: (context) => const AddStakingProgramDialog(),
           );
         },
-        child: const Icon(Icons.add),
         tooltip:
             toBeginningOfSentenceCase(
               AppLocalizations.of(context)!.addStakingProgram,
             ) ??
             'Add Staking Program',
+        child: const Icon(Icons.add),
       ),
     );
   }
 }
-=======
-        title: Text(AppLocalizations.of(context)?.dashboard ?? 'Dashboard'),
-      ),
-      body: Center(
-        child: Text(AppLocalizations.of(context)?.dashboardScreen ?? 'Dashboard Screen'),
-      ),
-    );
-  }
-}
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1

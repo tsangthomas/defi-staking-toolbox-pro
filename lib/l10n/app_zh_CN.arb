@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "appTitle": "DeFi 质押工具箱 Pro",
     "dashboard": "仪表盘",
     "tools": "工具",
@@ -14,6 +13,11 @@
     "accept": "接受",
     "decline": "拒绝",
     "portfolio": "投资组合",
+    "chartsPlaceholder": "图表占位符",
+    "stakingPrograms": "质押计划",
+    "programListPlaceholder": "计划列表占位符",
+    "addStakingProgram": "添加质押计划",
+    "aiAnalysis": "AI分析",
     "portfolioTrackerTitle": "投资组合追踪器",
     "noStakingItems": "没有质押项目",
     "addStakingItemsToGetStarted": "添加质押项目以开始",
@@ -45,25 +49,4 @@
     "invalidApy": "无效的APY",
     "addStakingDetails": "添加新质押头寸的详细信息。",
     "editStakingDetails": "编辑质押头寸的详细信息。"
-=======
-  "appTitle": "DeFi Staking Toolbox Pro",
-  "dashboard": "仪表盘",
-  "tools": "工具",
-  "settings": "设置",
-  "disclaimerTitle": "免责声明",
-  "disclaimerText": "本应用仅供教育目的，不构成投资建议。计算和人工智能可能存在错误；请独立核实。",
-  "agree": "同意",
-  "theme": "主题",
-  "darkMode": "黑暗模式",
-  "language": "语言",
-  "dashboardScreen": "仪表盘屏幕",
-  "toolsScreen": "工具屏幕",
-  "english": "英语",
-  "chinese": "中文",
-  "japanese": "日语",
-  "korean": "韩语",
-  "spanish": "西班牙语",
-  "chineseSimplified": "简体中文",
-  "chineseTraditional": "繁體中文"
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 }

@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "appTitle": "DeFi 스테이킹 툴박스 프로",
     "dashboard": "대시보드",
     "tools": "도구",
@@ -14,6 +13,11 @@
     "accept": "동의",
     "decline": "거부",
     "portfolio": "포트폴리오",
+    "chartsPlaceholder": "차트 자리 표시자",
+    "stakingPrograms": "스테이킹 프로그램",
+    "programListPlaceholder": "프로그램 목록 자리 표시자",
+    "addStakingProgram": "스테이킹 프로그램 추가",
+    "aiAnalysis": "AI 분석",
     "portfolioTrackerTitle": "포트폴리오 트래커",
     "noStakingItems": "스테이킹 항목 없음",
     "addStakingItemsToGetStarted": "시작하려면 스테이킹 항목을 추가하세요",
@@ -45,25 +49,4 @@
     "invalidApy": "유효하지 않은 APY",
     "addStakingDetails": "새 스테이킹 포지션의 세부 정보를 추가하세요.",
     "editStakingDetails": "스테이킹 포지션의 세부 정보를 편집하세요."
-=======
-  "appTitle": "DeFi Staking Toolbox Pro",
-  "dashboard": "대시보드",
-  "tools": "도구",
-  "settings": "설정",
-  "disclaimerTitle": "면책 조항",
-  "disclaimerText": "이 앱은 교육 목적으로만 사용되며 투자 조언이 아닙니다. 계산 및 AI에 오류가 있을 수 있습니다. 독립적으로 확인하십시오.",
-  "agree": "동의",
-  "theme": "테마",
-  "darkMode": "다크 모드",
-  "language": "언어",
-  "dashboardScreen": "대시보드 화면",
-  "toolsScreen": "도구 화면",
-  "english": "영어",
-  "chinese": "중국어",
-  "japanese": "일본어",
-  "korean": "한국어",
-  "spanish": "스페인어",
-  "chineseSimplified": "중국어(간체)",
-  "chineseTraditional": "중국어(번체)"
->>>>>>> 967defac7509451801a88e58b2ad642d615e6ef1
 }
