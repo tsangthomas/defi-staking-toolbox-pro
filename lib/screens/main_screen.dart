@@ -1,9 +1,10 @@
 import 'package:dstp/widgets/disclaimer_modal.dart';
 import 'package:flutter/material.dart';
+import 'package:dstp/screens/add_staking_screen.dart';
 import 'package:dstp/screens/dashboard_screen.dart';
-import 'package:dstp/screens/tools_screen.dart';
-import 'package:dstp/screens/settings_screen.dart';
 import 'package:dstp/screens/portfolio_dashboard_screen.dart';
+import 'package:dstp/screens/settings_screen.dart';
+import 'package:dstp/screens/tools_screen.dart';
 import 'package:dstp/l10n/app_localizations.dart';
 
 class MainScreen extends StatefulWidget {
@@ -33,23 +34,25 @@ class _MainScreenState extends State<MainScreen> {
     return DisclaimerModal(
       child: Scaffold(
         body: _screens[_selectedIndex],
+        // Remove global FAB on Portfolio; use draggable FAB inside PortfolioDashboardScreen
+        floatingActionButton: null,
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard),
+              icon: const Icon(Icons.dashboard),
               label: AppLocalizations.of(context)?.dashboard ?? 'Dashboard',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.account_balance_wallet),
+              icon: const Icon(Icons.account_balance_wallet),
               label: AppLocalizations.of(context)?.portfolio ?? 'Portfolio',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.build),
+              icon: const Icon(Icons.build),
               label: AppLocalizations.of(context)?.tools ?? 'Tools',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
+              icon: const Icon(Icons.settings),
               label: AppLocalizations.of(context)?.settings ?? 'Settings',
             ),
           ],
