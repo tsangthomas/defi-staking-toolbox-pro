@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:provider/provider.dart';
 import 'package:dstp/providers/theme_provider.dart';
 import 'package:dstp/providers/language_provider.dart';
@@ -15,7 +16,12 @@ import 'package:dstp/services/encryption_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+
+  // Avoid web assertion (FirebaseOptions cannot be null) by skipping Firebase init on web.
+  if (!kIsWeb) {
+    await Firebase.initializeApp();
+  }
+
   await Hive.initFlutter();
 
   final encryptionService = EncryptionService();
