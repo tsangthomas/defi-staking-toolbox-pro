@@ -28,7 +28,7 @@
     "apy": "APY",
     "stakingItemDeleted": "{coin}のステーキングアイテムが削除されました",
     "confirmDeletion": "削除の確認",
-    "areYouSureYouWantToDelete": "{coin}のステーakingアイテムを本当に削除しますか？",
+    "areYouSureYouWantToDelete": "{coin}のステーキングアイテムを本当に削除しますか？",
     "cancel": "キャンセル",
     "addStaking": "ステーキングを追加",
     "editStaking": "ステーキングを編集",
@@ -43,7 +43,20 @@
     "invalidNumber": "無効な数値です",
     "invalidApy": "無効なAPYです",
     "addStakingDetails": "新しいステーキングポジションの詳細を追加してください。",
-    "editStakingDetails": "ステーキングポジションの詳細を編集してください。",
+    "editStakingDetails": "新しいステーキングポジションの詳細を編集します。",
+
+    "status": "ステータス",
+    "endDate": "終了日",
+    "selectDate": "日付を選択",
+    "details": "詳細",
+    "initialBalance": "初期残高",
+    "currentBalance": "現在の残高",
+    "gasFee": "ガス代",
+    "walletPlatform": "ウォレット / プラットフォーム",
+    "startStaking": "ステーキング開始",
+    "unstake": "アンステーク",
+    "addToBalance": "残高に追加",
+
     "disclaimerText": "このアプリは教育目的のみであり、投資アドバイスではありません。計算やAIに誤りがある可能性があります。独立して確認してください。",
     "agree": "同意する",
     "darkMode": "ダークモード",
@@ -55,5 +68,11 @@
     "korean": "韓国語",
     "spanish": "スペイン語",
     "chineseSimplified": "中国語（簡体字）",
-    "chineseTraditional": "中国語（繁体字）"
+    "chineseTraditional": "中国語（繁体字）",
+
+    "chartsPlaceholder": "ここにチャートが表示されます",
+    "stakingPrograms": "ステーキングプログラム",
+    "programListPlaceholder": "ステーキングプログラムのリストがここに表示されます",
+    "addStakingProgram": "ステーキングプログラムを追加",
+    "aiAnalysis": "AI分析"
 }

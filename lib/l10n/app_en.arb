@@ -57,5 +57,16 @@
   "invalidNumber": "Invalid number",
   "invalidApy": "Invalid APY",
   "addStakingDetails": "Add the details of your new staking position.",
-  "editStakingDetails": "Edit the details of your staking position."
+  "editStakingDetails": "Edit the details of your staking position.",
+  "status": "Status",
+  "endDate": "End Date",
+  "selectDate": "Select Date",
+  "details": "Details",
+  "initialBalance": "Initial Balance",
+  "currentBalance": "Current Balance",
+  "gasFee": "Gas Fee",
+  "walletPlatform": "Wallet / Platform",
+  "startStaking": "Start Staking",
+  "unstake": "Unstake",
+  "addToBalance": "Add to Balance"
 }

@@ -459,6 +459,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Edit the details of your staking position.'**
   String get editStakingDetails;
+
+  /// No description provided for @status.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get status;
+
+  /// No description provided for @endDate.
+  ///
+  /// In en, this message translates to:
+  /// **'End Date'**
+  String get endDate;
+
+  /// No description provided for @selectDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Date'**
+  String get selectDate;
+
+  /// No description provided for @details.
+  ///
+  /// In en, this message translates to:
+  /// **'Details'**
+  String get details;
+
+  /// No description provided for @initialBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Initial Balance'**
+  String get initialBalance;
+
+  /// No description provided for @currentBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Balance'**
+  String get currentBalance;
+
+  /// No description provided for @gasFee.
+  ///
+  /// In en, this message translates to:
+  /// **'Gas Fee'**
+  String get gasFee;
+
+  /// No description provided for @walletPlatform.
+  ///
+  /// In en, this message translates to:
+  /// **'Wallet / Platform'**
+  String get walletPlatform;
+
+  /// No description provided for @startStaking.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Staking'**
+  String get startStaking;
+
+  /// No description provided for @unstake.
+  ///
+  /// In en, this message translates to:
+  /// **'Unstake'**
+  String get unstake;
+
+  /// No description provided for @addToBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to Balance'**
+  String get addToBalance;
 }
 
 class _AppLocalizationsDelegate

@@ -21,6 +21,23 @@ class _PortfolioDashboardScreenState extends State<PortfolioDashboardScreen> {
   late Offset _fabPosition;
   bool _fabInitialized = false;
 
+  // Distinct coin colors
+  final Map<String, Color> _coinColorMap = {};
+  final List<Color> _coinPalette = const [
+    Colors.blue,
+    Colors.red,
+    Colors.green,
+    Colors.orange,
+    Colors.purple,
+    Colors.cyan,
+    Colors.amber,
+    Colors.teal,
+    Colors.lime,
+    Colors.pink,
+    Colors.indigo,
+    Colors.brown,
+  ];
+
   @override
   void initState() {
     super.initState();
@@ -246,32 +263,35 @@ class _PortfolioDashboardScreenState extends State<PortfolioDashboardScreen> {
     AppLocalizations localizations,
   ) {
     final distribution = provider.getPortfolioDistribution();
-    final List<PieChartSectionData> sections = distribution.entries.map((
-      entry,
-    ) {
-      final isTouched = false; // Placeholder for interactivity
-      final fontSize = isTouched ? 16.0 : 14.0;
-      final radius = isTouched ? 60.0 : 50.0;
+
+    // Compute absolute totals per coin for legend display
+    final Map<String, double> totals = {};
+    for (final item in provider.portfolio) {
+      totals.update(item.coin, (prev) => prev + item.balance, ifAbsent: () => item.balance);
+    }
+
+    final List<PieChartSectionData> sections = distribution.entries.map((entry) {
       return PieChartSectionData(
         color: _getCoinColor(entry.key),
         value: entry.value,
-        title: '${entry.key}\n${entry.value.toStringAsFixed(1)}%',
-        radius: radius,
-        titleStyle: TextStyle(
-          fontSize: fontSize,
+        title: '${entry.key} (${entry.value.toStringAsFixed(1)}%)',
+        radius: 50.0,
+        titleStyle: const TextStyle(
+          fontSize: 12.0,
           fontWeight: FontWeight.bold,
-          color: const Color(0xffffffff),
+          color: Colors.white,
         ),
       );
     }).toList();
 
     return SizedBox(
-      height: 250,
+      height: 300,
       child: Card(
         elevation: 4,
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.fromLTRB(16, 20, 16, 20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 localizations.portfolioDistribution,
@@ -279,18 +299,29 @@ class _PortfolioDashboardScreenState extends State<PortfolioDashboardScreen> {
               ),
               const SizedBox(height: 16),
               Expanded(
-                child: PieChart(
-                  PieChartData(
-                    pieTouchData: PieTouchData(
-                      touchCallback: (FlTouchEvent event, pieTouchResponse) {
-                        // Handle touch events for interactivity
-                      },
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: PieChart(
+                        PieChartData(
+                          pieTouchData: PieTouchData(
+                            touchCallback: (FlTouchEvent event, pieTouchResponse) {},
+                          ),
+                          borderData: FlBorderData(show: false),
+                          sectionsSpace: 2,
+                          centerSpaceRadius: 60,
+                          sections: sections,
+                        ),
+                      ),
                     ),
-                    borderData: FlBorderData(show: false),
-                    sectionsSpace: 2,
-                    centerSpaceRadius: 40,
-                    sections: sections,
-                  ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      flex: 1,
+                      child: _buildLegendRight(totals, distribution),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -529,18 +560,44 @@ class _PortfolioDashboardScreenState extends State<PortfolioDashboardScreen> {
     );
   }
 
+  Widget _buildLegendRight(
+    Map<String, double> totals,
+    Map<String, double> distribution,
+  ) {
+    final numberFormatter = NumberFormat.decimalPattern();
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: ListView(
+        children: distribution.entries.map((e) {
+          final amount = totals[e.key] ?? 0.0;
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 10,
+                  height: 10,
+                  decoration: BoxDecoration(
+                    color: _getCoinColor(e.key),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                const SizedBox(width: 6),
+                Text('${e.key} (${numberFormatter.format(amount)})'),
+              ],
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+
   Color _getCoinColor(String coin) {
-    switch (coin) {
-      case 'ETH':
-        return Colors.indigo;
-      case 'SOL':
-        return Colors.purple;
-      case 'ADA':
-        return Colors.blue;
-      case 'DOT':
-        return Colors.pink;
-      default:
-        return Colors.grey;
-    }
+    if (_coinColorMap.containsKey(coin)) return _coinColorMap[coin]!;
+    final nextIndex = _coinColorMap.length % _coinPalette.length;
+    final color = _coinPalette[nextIndex];
+    _coinColorMap[coin] = color;
+    return color;
   }
 }

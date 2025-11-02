@@ -46,16 +46,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get dashboardScreen => 'ダッシュボード画面';
 
   @override
-  String get chartsPlaceholder => 'Charts will be here';
+  String get chartsPlaceholder => 'ここにチャートが表示されます';
 
   @override
-  String get stakingPrograms => 'Staking Programs';
+  String get stakingPrograms => 'ステーキングプログラム';
 
   @override
-  String get programListPlaceholder => 'Staking program list will be here';
+  String get programListPlaceholder => 'ステーキングプログラムのリストがここに表示されます';
 
   @override
-  String get addStakingProgram => 'Add Staking Program';
+  String get addStakingProgram => 'ステーキングプログラムを追加';
 
   @override
   String get toolsScreen => 'ツール画面';
@@ -82,7 +82,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get chineseTraditional => '中国語（繁体字）';
 
   @override
-  String get aiAnalysis => 'AI Analysis';
+  String get aiAnalysis => 'AI分析';
 
   @override
   String get disclaimerContent =>
@@ -143,7 +143,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String areYouSureYouWantToDelete(Object coin) {
-    return '$coinのステーakingアイテムを本当に削除しますか？';
+    return '$coinのステーキングアイテムを本当に削除しますか？';
   }
 
   @override
@@ -189,5 +189,38 @@ class AppLocalizationsJa extends AppLocalizations {
   String get addStakingDetails => '新しいステーキングポジションの詳細を追加してください。';
 
   @override
-  String get editStakingDetails => 'ステーキングポジションの詳細を編集してください。';
+  String get editStakingDetails => '新しいステーキングポジションの詳細を編集します。';
+
+  @override
+  String get status => 'ステータス';
+
+  @override
+  String get endDate => '終了日';
+
+  @override
+  String get selectDate => '日付を選択';
+
+  @override
+  String get details => '詳細';
+
+  @override
+  String get initialBalance => '初期残高';
+
+  @override
+  String get currentBalance => '現在の残高';
+
+  @override
+  String get gasFee => 'ガス代';
+
+  @override
+  String get walletPlatform => 'ウォレット / プラットフォーム';
+
+  @override
+  String get startStaking => 'ステーキング開始';
+
+  @override
+  String get unstake => 'アンステーク';
+
+  @override
+  String get addToBalance => '残高に追加';
 }

@@ -38,6 +38,7 @@ class _DisclaimerModalState extends State<DisclaimerModal> {
                   child: Text(AppLocalizations.of(context)?.agree ?? 'Agree'),
                   onPressed: () async {
                     await prefs.setBool(_hasAgreedToDisclaimer, true);
+                    if (!mounted) return;
                     Navigator.of(context).pop();
                   },
                 ),

@@ -191,4 +191,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get editStakingDetails => 'Edit the details of your staking position.';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get endDate => 'End Date';
+
+  @override
+  String get selectDate => 'Select Date';
+
+  @override
+  String get details => 'Details';
+
+  @override
+  String get initialBalance => 'Initial Balance';
+
+  @override
+  String get currentBalance => 'Current Balance';
+
+  @override
+  String get gasFee => 'Gas Fee';
+
+  @override
+  String get walletPlatform => 'Wallet / Platform';
+
+  @override
+  String get startStaking => 'Start Staking';
+
+  @override
+  String get unstake => 'Unstake';
+
+  @override
+  String get addToBalance => 'Add to Balance';
 }

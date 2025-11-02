@@ -98,6 +98,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
   Future<void> _fetchMarketPrice() async {
     setState(() => _loadingPrice = true);
     await Future.delayed(const Duration(milliseconds: 800));
+    if (!mounted) return;
     setState(() => _loadingPrice = false);
     // keep placeholder price at 0.50 as requested
   }
@@ -130,7 +131,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
             child: TabBar(
               controller: _tabController,
               tabs: [
-                const Tab(text: 'Details'),
+                Tab(text: localizations.details),
                 Tab(text: localizations.aiAnalysis),
               ],
             ),
@@ -187,6 +188,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
                         hintText: 'e.g., ADA',
                         border: const OutlineInputBorder(),
                       ),
+                      readOnly: _saved,
                        validator: (value) {
                          if (value == null || value.isEmpty) {
                           return localizations.fieldCannotBeEmpty;
@@ -233,17 +235,18 @@ class _AddStakingScreenState extends State<AddStakingScreen>
 
                 TextFormField(
                   controller: _walletController,
-                  decoration: const InputDecoration(
-                    labelText: 'Wallet / Platform',
+                  decoration: InputDecoration(
+                    labelText: localizations.walletPlatform,
                     hintText: 'e.g., Ledger, Coinbase, Binance',
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                   ),
+                  readOnly: _saved,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   onChanged: (_) => setState(() {}),
                   textInputAction: TextInputAction.next,
                   validator: (value) {
                     if (value == null || value.trim().isEmpty) {
-                      return 'Please enter a wallet/platform';
+                      return localizations.fieldCannotBeEmpty;
                     }
                     return null;
                   },
@@ -257,6 +260,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
                     hintText: 'Enter validator name or address',
                     border: const OutlineInputBorder(),
                   ),
+                  readOnly: _saved,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   onChanged: (_) => setState(() {}),
                   textInputAction: TextInputAction.next,
@@ -272,12 +276,13 @@ class _AddStakingScreenState extends State<AddStakingScreen>
                 TextFormField(
                   controller: _balanceController,
                   focusNode: _initialBalanceFocusNode,
-                  decoration: const InputDecoration(
-                    labelText: 'Initial Balance',
+                  decoration: InputDecoration(
+                    labelText: localizations.initialBalance,
                     hintText: 'e.g., 100.0',
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                   ),
                   keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                  readOnly: _saved,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   onChanged: (_) => setState(() {}),
                   validator: (value) {
@@ -294,23 +299,25 @@ class _AddStakingScreenState extends State<AddStakingScreen>
 
                 TextFormField(
                   controller: _gasFeeController,
-                  decoration: const InputDecoration(
-                    labelText: 'Gas Fee',
+                  decoration: InputDecoration(
+                    labelText: localizations.gasFee,
                     hintText: 'e.g., 0.1',
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                   ),
                   keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                  readOnly: _saved,
                 ),
                 const SizedBox(height: 16),
 
                 TextFormField(
                   controller: _currentBalanceController,
-                  decoration: const InputDecoration(
-                    labelText: 'Current Balance',
+                  decoration: InputDecoration(
+                    labelText: localizations.currentBalance,
                     hintText: 'e.g., 102.5',
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                   ),
                   keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                  readOnly: _saved,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   onChanged: (_) => setState(() {}),
                   validator: (value) {
@@ -333,6 +340,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
                     border: const OutlineInputBorder(),
                   ),
                   keyboardType: const TextInputType.numberWithOptions(decimal: true),
+                  readOnly: _saved,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   onChanged: (_) => setState(() {}),
                   validator: (value) {
@@ -355,6 +363,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
                     border: const OutlineInputBorder(),
                   ),
                   keyboardType: TextInputType.number,
+                  readOnly: _saved,
                 ),
                 const SizedBox(height: 16),
 
@@ -368,7 +377,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
                             hintText: 'Enter staking address',
                             border: const OutlineInputBorder(),
                           ),
-                      // Note: label is conditional and we keep English hint.
+                        readOnly: _saved,
                        ),
                       const SizedBox(height: 16),
                     ],
@@ -388,13 +397,14 @@ class _AddStakingScreenState extends State<AddStakingScreen>
                           firstDate: DateTime(2020),
                           lastDate: DateTime.now(),
                         );
+                        if (!mounted) return;
                         if (pickedDate != null && pickedDate != _startDate) {
                           setState(() {
                             _startDate = pickedDate;
                           });
                         }
                       },
-                      child: const Text('Select Date'),
+                      child: Text(localizations.selectDate),
                     ),
                   ],
                 ),
@@ -402,23 +412,24 @@ class _AddStakingScreenState extends State<AddStakingScreen>
                 Row(
                   children: [
                     Expanded(
-                      child: Text('End Date: ${_endDate == null ? '-' : DateFormat.yMd().format(_endDate!)}'),
+                      child: Text('${localizations.endDate}: ${_endDate == null ? '-' : DateFormat.yMd().format(_endDate!)}'),
                     ),
                     TextButton(
-                      onPressed: _status == 'Unstaking'
-                          ? () async {
-                              final pickedDate = await showDatePicker(
-                                context: context,
-                                initialDate: _endDate ?? DateTime.now(),
-                                firstDate: DateTime(2020),
-                                lastDate: DateTime.now().add(const Duration(days: 365)),
-                              );
-                              if (pickedDate != null) {
-                                setState(() => _endDate = pickedDate);
-                              }
-                            }
-                          : null,
-                      child: const Text('Select Date'),
+                      onPressed: _status == 'Unstaking' && !_saved
+                           ? () async {
+                               final pickedDate = await showDatePicker(
+                                 context: context,
+                                 initialDate: _endDate ?? DateTime.now(),
+                                 firstDate: DateTime(2020),
+                                 lastDate: DateTime.now().add(const Duration(days: 365)),
+                               );
+                               if (!mounted) return;
+                               if (pickedDate != null) {
+                                 setState(() => _endDate = pickedDate);
+                               }
+                             }
+                           : null,
+                      child: Text(localizations.selectDate),
                     ),
                   ],
                 ),
@@ -444,7 +455,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
                     ),
                   ),
                   child: Semantics(
-                    label: 'Status: $_status',
+                    label: '${localizations.status}: $_status',
                     child: Row(
                       children: [
                         AnimatedSwitcher(
@@ -468,7 +479,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
                         AnimatedSwitcher(
                           duration: const Duration(milliseconds: 180),
                           child: Text(
-                            'Status: $_status',
+                            '${localizations.status}: $_status',
                             key: ValueKey('text_$_status'),
                             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                                   fontWeight: FontWeight.w600,
@@ -561,28 +572,58 @@ class _AddStakingScreenState extends State<AddStakingScreen>
         top: false,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 10, 16, 20),
-          child: SizedBox(
-            height: 60,
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: _onSave,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: cs.primary,
-                foregroundColor: Colors.white,
-                elevation: 0,
-                shape: const StadiumBorder(),
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                minimumSize: const Size.fromHeight(60),
-                textStyle: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              child: Text(
-                AppLocalizations.of(context)?.save ?? 'Save',
-                style: const TextStyle(color: Colors.white),
-              ),
-            ),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 92),
+            child: _saved
+                ? Row(
+                    children: [
+                      Expanded(
+                        child: _textAction(
+                          AppLocalizations.of(context)!.startStaking,
+                          cs.primary,
+                          Colors.white,
+                          _onStartStaking,
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: _textAction(
+                          AppLocalizations.of(context)!.unstake,
+                          Colors.orange,
+                          Colors.white,
+                          _onUnstaking,
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: _textAction(
+                          AppLocalizations.of(context)!.addToBalance,
+                          cs.secondary,
+                          Colors.white,
+                          _onAddToBalance,
+                        ),
+                      ),
+                    ],
+                  )
+                : ElevatedButton(
+                    onPressed: _onSave,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: cs.primary,
+                      foregroundColor: Colors.white,
+                      elevation: 0,
+                      shape: const StadiumBorder(),
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      minimumSize: const Size.fromHeight(92),
+                      textStyle: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    child: Text(
+                      AppLocalizations.of(context)?.save ?? 'Save',
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ),
           ),
         ),
       ),
@@ -590,8 +631,8 @@ class _AddStakingScreenState extends State<AddStakingScreen>
   }
 
   Widget _textAction(String label, Color bg, Color fg, VoidCallback onPressed) {
-    return SizedBox(
-      height: 56,
+    return ConstrainedBox(
+      constraints: const BoxConstraints(minHeight: 92),
       child: FilledButton(
         onPressed: onPressed,
         style: FilledButton.styleFrom(
@@ -599,7 +640,8 @@ class _AddStakingScreenState extends State<AddStakingScreen>
           foregroundColor: fg,
           elevation: 0,
           shape: const StadiumBorder(),
-          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 18),
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+          minimumSize: const Size(double.infinity, 92),
           textStyle: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -607,8 +649,10 @@ class _AddStakingScreenState extends State<AddStakingScreen>
         ),
         child: Text(
           label,
-          overflow: TextOverflow.ellipsis,
-          maxLines: 1,
+          textAlign: TextAlign.center,
+          softWrap: true,
+          maxLines: 3,
+          overflow: TextOverflow.visible,
         ),
       ),
     );
@@ -691,6 +735,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
       firstDate: DateTime(2020),
       lastDate: DateTime.now().add(const Duration(days: 365)),
     );
+    if (!mounted) return;
     if (pickedDate != null) {
       setState(() {
         _startDate = pickedDate;
@@ -732,6 +777,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
       firstDate: DateTime(2020),
       lastDate: DateTime.now().add(const Duration(days: 365)),
     );
+    if (!mounted) return;
     if (pickedDate != null) {
       setState(() {
         _endDate = pickedDate;
@@ -776,6 +822,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
       ),
     );
 
+    if (!mounted) return;
     if (confirmed == true) {
       // Optionally navigate back, or clear fields
       _coinController.clear();
@@ -831,6 +878,7 @@ class _AddStakingScreenState extends State<AddStakingScreen>
       ),
     );
 
+    if (!mounted) return;
     if (addAmount != null && addAmount > 0) {
       final current = double.tryParse(_currentBalanceController.text.trim()) ?? 0.0;
       final updated = current + addAmount;

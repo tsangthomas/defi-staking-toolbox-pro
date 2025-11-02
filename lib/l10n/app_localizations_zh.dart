@@ -189,6 +189,39 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get editStakingDetails => '编辑质押头寸的详细信息。';
+
+  @override
+  String get status => '状态';
+
+  @override
+  String get endDate => '结束日期';
+
+  @override
+  String get selectDate => '选择日期';
+
+  @override
+  String get details => '详情';
+
+  @override
+  String get initialBalance => '初始余额';
+
+  @override
+  String get currentBalance => '当前余额';
+
+  @override
+  String get gasFee => 'Gas 费用';
+
+  @override
+  String get walletPlatform => '钱包 / 平台';
+
+  @override
+  String get startStaking => '开始质押';
+
+  @override
+  String get unstake => '解除质押';
+
+  @override
+  String get addToBalance => '添加到余额';
 }
 
 /// The translations for Chinese, as used in China (`zh_CN`).
@@ -339,6 +372,39 @@ class AppLocalizationsZhCn extends AppLocalizationsZh {
 
   @override
   String get editStakingDetails => '编辑质押头寸的详细信息。';
+
+  @override
+  String get status => '状态';
+
+  @override
+  String get endDate => '结束日期';
+
+  @override
+  String get selectDate => '选择日期';
+
+  @override
+  String get details => '详情';
+
+  @override
+  String get initialBalance => '初始余额';
+
+  @override
+  String get currentBalance => '当前余额';
+
+  @override
+  String get gasFee => 'Gas 费用';
+
+  @override
+  String get walletPlatform => '钱包 / 平台';
+
+  @override
+  String get startStaking => '开始质押';
+
+  @override
+  String get unstake => '解除质押';
+
+  @override
+  String get addToBalance => '添加到余额';
 }
 
 /// The translations for Chinese, as used in Taiwan (`zh_TW`).
@@ -489,4 +555,37 @@ class AppLocalizationsZhTw extends AppLocalizationsZh {
 
   @override
   String get editStakingDetails => '編輯質押頭寸的詳細資訊。';
+
+  @override
+  String get status => '狀態';
+
+  @override
+  String get endDate => '結束日期';
+
+  @override
+  String get selectDate => '選擇日期';
+
+  @override
+  String get details => '詳細資訊';
+
+  @override
+  String get initialBalance => '初始餘額';
+
+  @override
+  String get currentBalance => '目前餘額';
+
+  @override
+  String get gasFee => 'Gas 費用';
+
+  @override
+  String get walletPlatform => '錢包 / 平台';
+
+  @override
+  String get startStaking => '開始質押';
+
+  @override
+  String get unstake => '解除質押';
+
+  @override
+  String get addToBalance => '新增至餘額';
 }

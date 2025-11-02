@@ -46,16 +46,17 @@ class AppLocalizationsEs extends AppLocalizations {
   String get dashboardScreen => 'Pantalla del panel';
 
   @override
-  String get chartsPlaceholder => 'Charts will be here';
+  String get chartsPlaceholder => 'Los gráficos estarán aquí';
 
   @override
-  String get stakingPrograms => 'Staking Programs';
+  String get stakingPrograms => 'Programas de Staking';
 
   @override
-  String get programListPlaceholder => 'Staking program list will be here';
+  String get programListPlaceholder =>
+      'La lista de programas de staking estará aquí';
 
   @override
-  String get addStakingProgram => 'Add Staking Program';
+  String get addStakingProgram => 'Agregar programa de staking';
 
   @override
   String get toolsScreen => 'Pantalla de herramientas';
@@ -82,7 +83,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get chineseTraditional => 'Chino (tradicional)';
 
   @override
-  String get aiAnalysis => 'AI Analysis';
+  String get aiAnalysis => 'Análisis de IA';
 
   @override
   String get disclaimerContent =>
@@ -108,7 +109,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get totalStaked => 'Total en Staking';
 
   @override
-  String get totalRewards => 'Recompensas Totales';
+  String get totalRewards => 'Totalrecompensas';
 
   @override
   String get avgApy => 'APY Promedio';
@@ -193,4 +194,37 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get editStakingDetails =>
       'Edite los detalles de su posición de staking.';
+
+  @override
+  String get status => 'Estado';
+
+  @override
+  String get endDate => 'Fecha de Fin';
+
+  @override
+  String get selectDate => 'Seleccionar Fecha';
+
+  @override
+  String get details => 'Detalles';
+
+  @override
+  String get initialBalance => 'Saldo Inicial';
+
+  @override
+  String get currentBalance => 'Saldo Actual';
+
+  @override
+  String get gasFee => 'Tarifa de gas';
+
+  @override
+  String get walletPlatform => 'Billetera / Plataforma';
+
+  @override
+  String get startStaking => 'Comenzar Staking';
+
+  @override
+  String get unstake => 'Retirar Staking';
+
+  @override
+  String get addToBalance => 'Agregar al saldo';
 }

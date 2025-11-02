@@ -48,5 +48,17 @@
     "invalidNumber": "無效數字",
     "invalidApy": "無效的 APY",
     "addStakingDetails": "新增新質押頭寸的詳細資訊。",
-    "editStakingDetails": "編輯質押頭寸的詳細資訊。"
+    "editStakingDetails": "編輯質押頭寸的詳細資訊。",
+
+    "status": "狀態",
+    "endDate": "結束日期",
+    "selectDate": "選擇日期",
+    "details": "詳細資訊",
+    "initialBalance": "初始餘額",
+    "currentBalance": "目前餘額",
+    "gasFee": "Gas 費用",
+    "walletPlatform": "錢包 / 平台",
+    "startStaking": "開始質押",
+    "unstake": "解除質押",
+    "addToBalance": "新增至餘額"
 }

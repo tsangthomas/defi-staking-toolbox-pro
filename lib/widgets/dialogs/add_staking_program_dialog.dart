@@ -88,6 +88,7 @@ class _AddStakingProgramDialogState extends State<AddStakingProgramDialog> {
                 imageUrl: imageUrl,
               );
               await Hive.box<StakingProgram>('staking_programs').add(newProgram);
+              if (!mounted) return;
               Navigator.of(context).pop();
             }
           },

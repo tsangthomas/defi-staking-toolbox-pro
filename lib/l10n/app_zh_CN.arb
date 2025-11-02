@@ -48,5 +48,17 @@
     "invalidNumber": "无效数字",
     "invalidApy": "无效的APY",
     "addStakingDetails": "添加新质押头寸的详细信息。",
-    "editStakingDetails": "编辑质押头寸的详细信息。"
+    "editStakingDetails": "编辑质押头寸的详细信息。",
+
+    "status": "状态",
+    "endDate": "结束日期",
+    "selectDate": "选择日期",
+    "details": "详情",
+    "initialBalance": "初始余额",
+    "currentBalance": "当前余额",
+    "gasFee": "Gas 费用",
+    "walletPlatform": "钱包 / 平台",
+    "startStaking": "开始质押",
+    "unstake": "解除质押",
+    "addToBalance": "添加到余额"
 }

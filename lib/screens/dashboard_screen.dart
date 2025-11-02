@@ -1,5 +1,4 @@
 import 'package:dstp/models/staking_program.dart';
-import 'package:dstp/services/coin_service.dart';
 import 'package:dstp/services/shared_preferences_service.dart';
 import 'package:dstp/widgets/dialogs/add_staking_program_dialog.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -611,20 +610,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           );
         },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (context) => const AddStakingProgramDialog(),
-          );
-        },
-        tooltip:
-            toBeginningOfSentenceCase(
-              AppLocalizations.of(context)!.addStakingProgram,
-            ) ??
-            'Add Staking Program',
-        child: const Icon(Icons.add),
-      ),
+
     );
   }
 }
